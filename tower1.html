@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Бронирование переговорной</title>
+ <meta charset="utf-8">
+ <script type="text/javascript">
+  function sendData() {
+   var tower = document.getElementById("tower").value;
+   var floor = document.getElementById("floor").value;
+   var room = document.getElementById("room").value;
+   var date = document.getElementById("date").value;
+   var time = document.getElementById("time").value;
+   var comment = document.getElementById("comment").value;
+
+   var data = {
+    "tower": tower,
+    "floor": floor,
+    "room": room,
+    "date": date,
+    "time": time,
+    "comment": comment
+   };
+
+   console.log(JSON.stringify(data));
+  }
+
+  function clearForm() {
+   document.getElementById("tower").selectedIndex = 0;
+   document.getElementById("floor").selectedIndex = 0;
+   document.getElementById("room").selectedIndex = 0;
+   document.getElementById("date").selectedIndex = 0;
+   document.getElementById("time").selectedIndex = 0;
+   document.getElementById("comment").value = "";
+  }
+ </script>
+</head>
+<body>
+ <form>
+  <label> <font size="4" color="8B00FF" face="serif"> Выберите башню:</label>
+  <select id="tower">
+   <option value="1">A</option>
+   <option value="2">Б</option>
+  </select>
+  <br><br>
+
+  <label>Выберите этаж:</label>
+  <select id="floor">
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6">6</option>
+   <option value="7">7</option>
+   <option value="8">8</option>
+   <option value="9">9</option>
+   <option value="10">10</option>
+   <option value="11">11</option>
+   <option value="12">12</option>
+   <option value="13">13</option>
+   <option value="14">14</option>
+   <option value="15">15</option>
+   <option value="16">16</option>
+   <option value="17">17</option>
+   <option value="18">8</option>
+   <option value="19">19</option>
+   <option value="20">20</option>
+   <option value="21">21</option>
+   <option value="22">22</option>
+   <option value="23">23</option>
+   <option value="24">24</option>
+   <option value="25">25</option>
+   <option value="26">26</option>
+   <option value="27">27</option>
+  </select>
+  <br><br>
+
+  <label>Выберите переговорку:</label>
+  <select id="room">
+   <option value="1">Переговорка 1</option>
+   <option value="2">Переговорка 2</option>
+   <option value="3">Переговорка 3</option>
+   <option value="4">Переговорка 4</option>
+   <option value="5">Переговорка 5</option>
+   <option value="6">Переговорка 6</option>
+   <option value="7">Переговорка 7</option>
+   <option value="8">Переговорка 8</option>
+   <option value="9">Переговорка 9</option>
+   <option value="10">Переговорка 10</option>
+  </select>
+  <br><br>
+
+  <label>Выберите дату:</label>
+  <input type="date" id="date">
+  <br><br>
+
+  <label>Выберите время:</label>
+  <select id="time">
+   <option value="9:00-10:00">9:00-10:00</option>
+   <option value="10:00-11:00">10:00-11:00</option>
+   <option value="11:00-12:00">11:00-12:00</option>
+   <option value="12:00-13:00">12:00-13:00</option>
+   <option value="13:00-14:00">13:00-14:00</option>
+   <option value="14:00-15:00">14:00-15:00</option>
+   <option value="15:00-16:00">15:00-16:00</option>
+   <option value="16:00-17:00">16:00-17:00</option>
+   <option value="17:00-18:00">17:00-18:00</option>
+  </select>
+  <br><br>
+
+  <label>Комментарий:</label>
+  <textarea id="comment"></textarea>
+  <br><br>
+
+  <input type="button" value="Отправить" onclick="sendData()">
+  <input type="button" value="Очистить" onclick="clearForm()">
+ </form>
+</body>
+</html>
